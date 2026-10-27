@@ -6,7 +6,8 @@ on iPhone and iPad and the manager desk on Mac and iPad, on one shared backend.*
 > [!NOTE]
 > **The source code of this project is private.** This repository is its public showcase: the
 > README and every source file with its types and function signatures, but none of the code inside
-> them. If you'd like a demo or to talk about the project, open an issue.
+> them. For a demo or access to the source code, email me at
+> [christodontchev@gmail.com](mailto:christodontchev@gmail.com).
 
 Every fill-up, charge, card payment, trip and inspection lands in one company ledger that the
 manager can see. DriveDesk grows out of [iDrive](https://github.com/Zukipany/iDrive), a single-user
