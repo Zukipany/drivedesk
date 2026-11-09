@@ -18,7 +18,7 @@ DriveDesk is the working name until the trademark search is done.
 | Surface      | Device              | Who                                   |
 |--------------|---------------------|---------------------------------------|
 | Driver app   | iPhone (main), iPad | Employees with a company or pool car  |
-| Manager desk | Mac (main), iPad    | Fleet manager, owner, finance         |
+| Manager desk | Mac (main), iPad    | Fleet manager, owner, accountant      |
 | Backend      | Supabase, Frankfurt | Both                                  |
 
 ## What it does
@@ -55,16 +55,24 @@ Each one has a written decision record in the private repository.
 
 ## Status
 
-In active development, built in phases with a gate at the end of each.
+In active development, built in phases with a gate at the end of each. Phases 0 to 4 have shipped
+their app and server parts:
 
-- **Phase 0, Foundation (done):** one XcodeGen target that runs on iPhone, iPad and Mac with strict
-  Swift 6; four packages ported from iDrive with their tests (DDCore 173, DDPrices 64,
-  DDDesignSystem 8, DDDevice with iDrive's receipt bench at 105 of 105 receipts); Supabase
-  tenancy, vehicle and money tables with row-level security, an append-only audit log and 132
-  pgTAP tests; CI for both platforms and the backend.
-- **Phase 1, Driver app (in progress):** sign-in with an email link, the offline outbox and sync
-  engine, onboarding (create a company or join with an invitation, in English and German), and
-  navigation with the Today screen.
+- **Phase 0, Foundation:** one XcodeGen target for iPhone, iPad and Mac with strict Swift 6; the
+  packages ported from iDrive with their tests; Supabase tenancy with row-level security and an
+  append-only audit log; CI for both platforms and the backend.
+- **Phase 1, Driver app:** sign-in, the offline outbox and sync, onboarding, Today, the map,
+  fill-up capture, the car screen and invitation emails.
+- **Phase 2, Desk and money:** the ledger, cars and people, budgets and fuel rules, fuel-card
+  import, cost per car, input VAT checks, and a month close with DATEV, ledger and payroll exports.
+- **Phase 3, Company cards:** prepaid virtual cards on Stripe Issuing, approve or decline at the
+  pump, card rules applied by the server, and receipts attached to card payments.
+- **Phase 4, Compliance and logbook:** the ride recorder and a logbook sealed in a hash chain,
+  licence checks, UVV inspections, the yearly driver instruction, damage reports, home charging
+  and "who drove?".
+
+Still open: the receipts ZIP and ledger PDF for the month close, a tax advisor's sign-off on the
+DATEV file, and a recorded load test for card decisions.
 
 ## Tech stack
 
